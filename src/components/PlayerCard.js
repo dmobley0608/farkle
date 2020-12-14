@@ -11,41 +11,43 @@ class PlayerCard extends React.Component{
         }      
     }
 
-   
+   resetInput = () =>{
+    const score_input = document.getElementsByClassName('score_input');
+    for(let i = score_input.length-1; i >= 0; i--){           
+        score_input[i].value = '';         
+     }
+   }
 
     onInputChange = (event) =>{
         this.setState({input: parseInt(event.target.value)});       
      }
 
-     tallyRolls = () =>{
-        const score_input = document.getElementById('score_input');
+     tallyRolls = () =>{       
        let newScore=this.state.input + this.state.tally;
        this.setState({
            tally: newScore,
            input: 0    
        });
-       score_input.value = '';
-      
+      this.resetInput();      
      }
 
-     calculateScore = () => {
-        const score_input = document.getElementById('score_input');
+     calculateScore = () => {      
          let newScore = this.state.tally + this.state.score;
          this.setState({
              score: newScore,
              tally: 0,
              input:0
          });
-         score_input.value = '';
+         this.resetInput();
      }
 
-     farkle=()=>{
-        const score_input = document.getElementById('score_input');
+     farkle=()=>{       
          this.setState({
              tally: 0,
              input:0
          });
-         score_input.value = '';
+         this.resetInput();
+         
      }
 
 
@@ -57,7 +59,7 @@ class PlayerCard extends React.Component{
                             <h5 className="card-title text-muted mt-3">{this.props.name}</h5>
                             <h1 className="card-subtitle mb-2 text-muted">Score: {this.state.score}</h1>
                             <h2 className="card-subtitle mb-2 text-muted">Tally: {this.state.tally}</h2>
-                            <input id='score_input' onChange={this.onInputChange} style={{width:'16em'}} type="" className="form-control mx-auto" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
+                            <input onChange={this.onInputChange} style={{width:'16em'}} type="" className="score_input form-control mx-auto" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
                         </div>                       
                         <div className='' style={{marginTop:'.5em'}}>
                             <button onClick={()=>this.tallyRolls()} className='' style={{marginRight:'2em'}} type="button" class="btn btn-secondary">Add To Score</button>
