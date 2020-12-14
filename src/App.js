@@ -33,22 +33,21 @@ class App extends React.Component {
       this.setState({
         route:'home'
       });
-  }else{
-    const promptPlayer = [];     
-   for(let i = this.state.numberOfPlayers; i>0; i-- ){ 
-    let player = prompt("Enter play name.");       
-    if(player === '' || player=== null){
-      alert("You better enter a name");
-      this.setState({route:'home'});
-      return 1;
-    }else{    
-      promptPlayer.push(player);    
-      this.setState({players: promptPlayer});     
+    }else{
+        const promptPlayer = [];     
+        for(let i = this.state.numberOfPlayers; i>0; i-- ){ 
+          let player = prompt("Enter play name.");       
+          if(player === '' || player=== null){
+            alert("You better enter a name");
+            this.setState({route:'home'});
+            return 1;
+          }else{    
+            promptPlayer.push(player);    
+            this.setState({players: promptPlayer});     
+          }
+          
+        }
     }
-    
-   }
-  }     
-   
   }
 
 
@@ -59,8 +58,7 @@ class App extends React.Component {
       ?<Homepage onRouteChange = {this.onRouteChange}
                   playerSelector = {this.playerSelector}
                   getPlayerNames = {this.getPlayerNames}/>
-      :<PlayCardOrganizer players={this.state.players}
-                          numberOfPlayers={this.state.numberOfPlayers}/>
+      :<PlayCardOrganizer players={this.state.players} numberOfPlayers={this.state.numberOfPlayers}/>
       }        
     </div>
   );
