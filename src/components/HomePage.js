@@ -40,7 +40,7 @@ class Homepage extends React.Component{
                     
                 </div>
                 <div className='mt-5'>
-                    <button onClick={()=>{this.props.getPlayerNames();this.props.onRouteChange('scoreCards')}} type="button" class="btn btn-primary btn-lg">Let's Play</button>
+                    <button onClick={()=>{this.props.onRouteChange('scoreCards');this.props.getPlayerNames()}} type="button" class="btn btn-primary btn-lg">Let's Play</button>
                 </div>
               
             </div>

@@ -8,13 +8,14 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      numberOfPlayers : 4,
+      numberOfPlayers : 0,
       route: "home",
-      players: ["Dwight", "Meygan", "Taylor", "Cash"]
+      players: []
     }
   }
 
   onRouteChange = (route) =>{
+    if(this.state.numberOfPlayers === 0) return 1;
     this.setState({
       route: route
     });
@@ -27,14 +28,26 @@ class App extends React.Component {
   }
 
   getPlayerNames = ()=>{
+    if(this.state.numberOfPlayers === 0){
+     alert("Please select the number of players.")
+      this.setState({
+        route:'home'
+      });
+  }else{
     const promptPlayer = [];
-   for(let i = this.state.numberOfPlayers; i>0; i-- ){
-    let player = prompt("Enter play name.")
+    let player = prompt("Enter play name.");    
+   for(let i = this.state.numberOfPlayers; i>0; i-- ){     
+    if(player === '' || player=== null){
+      alert("You better enter a name");
+      this.setState({route:'home'});
+      return 1;
+    }else{    
+      promptPlayer.push(player);    
+      this.setState({players: promptPlayer});     
+    }
     
-    promptPlayer.push(player);
-    this.setState({players: promptPlayer});
-    console.log(this.state.players);
-   }     
+   }
+  }     
    
   }
 
