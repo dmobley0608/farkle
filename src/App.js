@@ -34,9 +34,9 @@ class App extends React.Component {
         route:'home'
       });
   }else{
-    const promptPlayer = [];
-    let player = prompt("Enter play name.");    
-   for(let i = this.state.numberOfPlayers; i>0; i-- ){     
+    const promptPlayer = [];     
+   for(let i = this.state.numberOfPlayers; i>0; i-- ){ 
+    let player = prompt("Enter play name.");       
     if(player === '' || player=== null){
       alert("You better enter a name");
       this.setState({route:'home'});
