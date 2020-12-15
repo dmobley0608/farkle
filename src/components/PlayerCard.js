@@ -96,14 +96,14 @@ class PlayerCard extends React.Component{
                             <input onChange={this.onInputChange} style={{maxWidth:'16em'}} type="" className="score_input form-control mx-auto" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
                         </div>                       
                         <div className='' style={{marginTop:'.5em'}}>
-                            <button onClick={()=>this.tallyRolls()} className='' style={{marginRight:'2em'}} type="button" class="btn btn-secondary">Add To Score</button>
+                            <button onClick={()=>this.tallyRolls()} className='' style={{marginRight:'2em'}} type="button" class="btn btn-secondary">Add To Tally</button>
                             <button onClick={()=>this.farkle()}  className='' type="button" class="btn btn-danger">FARKLE</button>
                         </div>
                         <div className='' style={{marginTop:'1em'}}>
                         <button onClick={()=>this.calculateScore()}className='' type="button" class="btn btn-primary">Submit Score</button>
-                        </div>
-                   
+                        </div>                   
                 </div>
+                if(this.)
             </div>
         );
     }
