@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/farkle/static/css/main.9ed319f0.chunk.css",
-    "main.js": "/farkle/static/js/main.8683ac29.chunk.js",
-    "main.js.map": "/farkle/static/js/main.8683ac29.chunk.js.map",
+    "main.css": "/farkle/static/css/main.e651d771.chunk.css",
+    "main.js": "/farkle/static/js/main.525fd7aa.chunk.js",
+    "main.js.map": "/farkle/static/js/main.525fd7aa.chunk.js.map",
     "runtime-main.js": "/farkle/static/js/runtime-main.56dc21f9.js",
     "runtime-main.js.map": "/farkle/static/js/runtime-main.56dc21f9.js.map",
     "static/js/2.feaf818c.chunk.js": "/farkle/static/js/2.feaf818c.chunk.js",
@@ -10,13 +10,14 @@
     "static/js/3.689cc507.chunk.js": "/farkle/static/js/3.689cc507.chunk.js",
     "static/js/3.689cc507.chunk.js.map": "/farkle/static/js/3.689cc507.chunk.js.map",
     "index.html": "/farkle/index.html",
-    "static/css/main.9ed319f0.chunk.css.map": "/farkle/static/css/main.9ed319f0.chunk.css.map",
-    "static/js/2.feaf818c.chunk.js.LICENSE.txt": "/farkle/static/js/2.feaf818c.chunk.js.LICENSE.txt"
+    "static/css/main.e651d771.chunk.css.map": "/farkle/static/css/main.e651d771.chunk.css.map",
+    "static/js/2.feaf818c.chunk.js.LICENSE.txt": "/farkle/static/js/2.feaf818c.chunk.js.LICENSE.txt",
+    "static/media/di6798zXT.df2958cc.png": "/farkle/static/media/di6798zXT.df2958cc.png"
   },
   "entrypoints": [
     "static/js/runtime-main.56dc21f9.js",
     "static/js/2.feaf818c.chunk.js",
-    "static/css/main.9ed319f0.chunk.css",
-    "static/js/main.8683ac29.chunk.js"
+    "static/css/main.e651d771.chunk.css",
+    "static/js/main.525fd7aa.chunk.js"
   ]
 }
