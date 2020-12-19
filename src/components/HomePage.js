@@ -14,9 +14,11 @@ class Homepage extends React.Component{
         
         if(this.state.selected === true){
             selection.classList.add('selected');
+            selection.classList.remove('grow');
             this.setState({selected:false});
         }else{
             selection.classList.remove('selected');
+            selection.classList.add('grow');
             this.setState({selected:true});
         }
 
@@ -25,7 +27,13 @@ class Homepage extends React.Component{
         return(
             <div>
                 <div className='p-2' style={{marginTop:'25vh'}}>
-                    <h1 className='animate__animated animate__rollIn'>Let's Play Farkle</h1>
+                    <h1 className='animate__animated animate__rubberBand'>Let's Play Farkle</h1>
+                    <img  className='animate__animated animate__rollIn' alt = '' src='http://pngimg.com/uploads/dice/dice_PNG108.png' width='50px'/>
+                    <img  className='animate__animated animate__rollIn' alt = '' src='http://pngimg.com/uploads/dice/dice_PNG108.png' width='50px'/>
+                    <img  className='animate__animated animate__rollIn' alt = '' src='http://pngimg.com/uploads/dice/dice_PNG108.png' width='50px'/>
+                    <img  className='animate__animated animate__rollIn' alt = '' src='http://pngimg.com/uploads/dice/dice_PNG108.png' width='50px'/>
+                    <img  className='animate__animated animate__rollIn' alt = '' src='http://pngimg.com/uploads/dice/dice_PNG108.png' width='50px'/>
+                    <img  className='animate__animated animate__rollIn' alt = '' src='http://pngimg.com/uploads/dice/dice_PNG108.png' width='50px'/>                
                 </div>
                 <div className='mt-5'>
                     <h2>How many players are there?</h2>

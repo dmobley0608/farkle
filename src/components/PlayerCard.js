@@ -103,7 +103,7 @@ class PlayerCard extends React.Component{
                         <button onClick={()=>this.calculateScore()}className='' type="button" class="btn btn-primary">Submit Score</button>
                         </div>                   
                 </div>
-                if(this.)
+                
             </div>
         );
     }
