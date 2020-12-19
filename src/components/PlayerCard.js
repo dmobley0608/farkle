@@ -60,8 +60,8 @@ class PlayerCard extends React.Component{
 
     render(){
         return(
-            <div className='d-flex' style={{marginRight:'1em'}} >
-                <div className='border border-black rounded d-grid bg-dark p-1' style={{width:'300px', height:'375px', marginTop:'1em'}}>
+            <div className='d-flex playercard' style={{marginRight:'1em'}} >
+                <div className='mobilebox border border-black rounded d-grid bg-dark p-1' style={{width:'300px',  marginTop:'1em'}}>
 
                     <div id='onesandfives' className='mx-auto'>                        
                         <p style={{marginBottom:'.25em'}}>1s and 5s</p>

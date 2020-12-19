@@ -10,6 +10,9 @@
   overflow-x: scroll;
   overflow-wrap: normal;
 }
+.homebox{
+  width:600px;
+}
 
 .selected{
   transform:scale(1.25);
@@ -58,6 +61,12 @@
   }
   #submit{
     transform: scale(.75);
+  }
+  .homebox{      
+   width:300px;
+  }
+  .card{
+    height: 400px;
   }
 }
 
