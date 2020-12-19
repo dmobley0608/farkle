@@ -10,6 +10,7 @@
   overflow-x: scroll;
   overflow-wrap: normal;
 }
+
 .selected{
   transform:scale(1.25);
   background-color: rgb(245, 117, 43);  
@@ -26,5 +27,37 @@
 
 .card{
   height: 375px;
+}
+
+.hidden{
+  z-index: -1;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  #scoreinput{
+    visibility: hidden;
+    position:absolute;
+    z-index: -1;
+  }
+    
+  
+  #tally{
+    visibility: hidden;
+    position:absolute;
+    z-index: -1;
+  }
+  #score{
+    transform:scale(.75);
+  }
+  #tallyscore{
+    transform:scale(.75);
+  }
+  #farkle{
+    transform: scale(.75);
+  }
+  #submit{
+    transform: scale(.75);
+  }
 }
 
