@@ -8,6 +8,7 @@ class PlayerCard extends React.Component{
         this.state = {
             score: 0,
             tally: 0,
+            runningScore: 0,
             input: 0,          
         }      
     }
@@ -52,10 +53,12 @@ class PlayerCard extends React.Component{
      }
 
      farkleButtonPointHandler = (points)=>{         
-         let oldTally = this.state.tally;
+         let oldTally = this.state.tally;        
          this.setState({tally:(oldTally+points)});
+       
+        
      }
-     
+
     
 
     render(){
@@ -66,7 +69,7 @@ class PlayerCard extends React.Component{
                     <div id='onesandfives' className='mx-auto'>                        
                         <p style={{marginBottom:'.25em'}}>1s and 5s</p>
                         <div className='d-flex' style={{marginTop:'0em'}}>
-                            <FarklePointButton pointHandler={this.farkleButtonPointHandler} points={100} label={"1s"} wide={'35px'} right={'.25em'}/>
+                            <FarklePointButton pointHandler={this.farkleButtonPointHandler} points={100} label={"1s"} wide={'35px'} right={'3em'}/>
                             <FarklePointButton pointHandler={this.farkleButtonPointHandler} points={50} label={"5s"} wide={'35px'} />           
                         </div>                       
                                                        
@@ -96,23 +99,37 @@ class PlayerCard extends React.Component{
                             <FarklePointButton pointHandler={this.farkleButtonPointHandler} points={600} label={"6s"} wide={'35px'}/>       
                         </div>                          
                     </div>
+                    <div>
+                        <p style={{marginBottom:'.25em'}}>Score Adjustment</p>
+                    </div>
+                    <div className='d-flex mx-auto mt-0'>                        
+                        <FarklePointButton pointHandler={this.farkleButtonPointHandler} points={-50} label={"-50"} wide={'65px'}right={'.25em'}/>
+                        <FarklePointButton pointHandler={this.farkleButtonPointHandler} points={-100} label={"-100"} wide={'65px'}right={'.25em'}/>
+                        <FarklePointButton pointHandler={this.farkleButtonPointHandler} points={-1000} label={"-1000"} wide={'65px'}/>       
+                    </div>
                 </div>
-                <div className="card mx-auto" style={{width: "25vw", marginTop:'1em' }}>                    
+                <div className="card mx-auto " style={{width: "30vw", marginTop:'1em' }}>                    
                         <div>
                             <h5 className="card-title text-muted mt-3">{this.props.name}</h5>
                             <img  className='animate__animated animate__wobble' alt = '' src='http://pngimg.com/uploads/dice/dice_PNG108.png' width='25px'/>
-                            <h1 id='score' className="card-subtitle mb-2 text-muted">Score: {this.state.score}</h1>
-                            <h2 id='tallyscore' className="card-subtitle mb-2 text-muted">Tally: {this.state.tally}</h2>
+                            <h3 id='score' className="card-subtitle mb-2 text-muted">Score: {this.state.score}</h3>
+                            <h5 id='tallyscore' className="card-subtitle mb-2 text-muted">Tally: {this.state.tally}</h5>
+                            <p className="runningScore card-subtitle mb-2 text-muted">Possible Total: {this.state.score + this.state.tally}</p>
                             <input id='scoreinput' onChange={this.onInputChange} style={{maxWidth:'16em'}} type="" className="score_input form-control mx-auto" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
-                        </div>                       
-                        <div id='tally_farkle' className='' style={{marginTop:'.5em'}}>
-                            <button id= 'tally'  onClick={()=>this.tallyRolls()} className='' style={{marginRight:'2em'}} type="button" class="btn btn-secondary">Add To Tally</button>
-                            <button id='farkle' onClick={()=>this.farkle()}  className='' type="button" class="btn btn-danger">FARKLE</button>
                         </div>
+                      <div className='mx-auto'>
+                      <div id='tally_farkle' className='' style={{marginTop:'.5em'}}>
+                            <button id= 'tally'  onClick={()=>{this.tallyRolls();}} className='' style={{width:'200px'}} type="button" class="btn btn-secondary">Add To Tally</button>
+                        </div>
+                        <div className='' style={{marginTop:'1em'}}>
+                            <button id='farkle' onClick={()=>this.farkle()}  className='' style={{width:'200px', marginTop:''}} type="button" class="btn btn-danger">FARKLE</button>
+                        </div>                        
                         <div id='submit' className='' style={{marginTop:'1em'}}>
-                        <button onClick={()=>this.calculateScore()}className='' type="button" class="btn btn-primary">Submit Score</button>
-                        </div>              
-                </div>
+                            <button onClick={()=>this.calculateScore()}className='' style={{width:'200px'}} type="button" class="btn btn-primary">Submit Score</button>                   
+                        </div>        
+                      </div>
+                              
+                </div>           
                 
             </div>
         );

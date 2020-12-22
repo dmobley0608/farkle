@@ -7,22 +7,18 @@ class Homepage extends React.Component{
         this.state={
             selected: true
         }
+    }  
+
+    getInitialSate = () =>{
+        return {
+            selectedOption: '1 Player'
+        };
     }
 
-    selectorHandler=(i)=>{
-        const selection = document.getElementById(i);
-        
-        if(this.state.selected === true){
-            selection.classList.add('selected');
-            selection.classList.remove('grow');
-            this.setState({selected:false});
-        }else{
-            selection.classList.remove('selected');
-            selection.classList.add('grow');
-            this.setState({selected:true});
-        }
-
+    handleOptionChange = (event) =>{
+        this.setState({selectedOption: event.target.value});
     }
+
     render(){
         return(
             <div>
@@ -39,11 +35,32 @@ class Homepage extends React.Component{
                     <h2>How many players are there?</h2>
                 </div>
                 <div className='mt-5 homebox mx-auto'>
-                    <div className='mx-auto border border-4 p-2 shadow-lg p-3 mb-5 bg-secondary rounded'>
-                        <h3 id='p1' onClick={()=>{this.props.playerSelector(1); this.selectorHandler('p1');}} className='w-75 grow pointer mx-auto rounded'>1 player</h3>
-                        <h3 id='p2' onClick={()=>{this.props.playerSelector(2); this.selectorHandler('p2');}}className='w-75 grow pointer mx-auto rounded'>2 players</h3>
-                        <h3 id='p3' onClick={()=>{this.props.playerSelector(3); this.selectorHandler('p3');}}className='w-75 grow pointer mx-auto rounded'>3 players</h3>
-                        <h3 id='p4' onClick={()=>{this.props.playerSelector(4); this.selectorHandler('p4');}}className='w-75 grow pointer mx-auto rounded'>4 players</h3>
+                    <div className='border border-4 p-2 shadow-lg p-3 mb-5 bg-secondary rounded d-flex flex-column align-items-center'>
+
+                            <label className="btn btn-primary m-1 w-75">
+                                <input type='checkbox' value='1 Player' checked ={this.state.selectedOption === '1 Player'} 
+                                    onChange={this.handleOptionChange}  onClick={()=>this.props.playerSelector(1)} id='p1' className='pointer mx-3'/>
+                                1 Player
+                            </label>
+                          
+                            <label className="btn btn-primary m-1 w-75">
+                                <input type='checkbox' value='2 Player' checked ={this.state.selectedOption === '2 Player'} 
+                                    onChange={this.handleOptionChange}  onClick={()=>this.props.playerSelector(2)} id='p2' className='pointer mx-3'/>
+                                2 Players
+                            </label>          
+                           
+                           
+                            <label className="btn btn-primary m-1 w-75">
+                                <input type='checkbox' value='3 Player' checked ={this.state.selectedOption === '3 Player'} 
+                                    onChange={this.handleOptionChange}  onClick={()=>this.props.playerSelector(3)} id='p3'className='pointer mx-3'/>
+                                3 Players
+                            </label>
+                            <label className="btn btn-primary m-1 w-75" >
+                                <input type='checkbox' value='4 Player' checked ={this.state.selectedOption === '4 Player'} 
+                                    onChange={this.handleOptionChange}  onClick={()=>this.props.playerSelector(4)} id='p4'className='pointer mx-3'/>
+                                4 Players
+                            </label>
+                           
                     </div>
                     
                 </div>

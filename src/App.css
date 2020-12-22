@@ -14,6 +14,7 @@
   width:600px;
 }
 
+
 .selected{
   transform:scale(1.25);
   background-color: rgb(245, 117, 43);  
@@ -29,7 +30,7 @@
 }
 
 .card{
-  height: 375px;
+  height: 450px;
 }
 
 .hidden{
